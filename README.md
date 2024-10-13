@@ -70,3 +70,25 @@ ubah env menggunakan postgresql
 Need install php versi 8.2 +, install laravel installer, install composer
 mengaktifkan extension pdo_pgsql
 cmd composer install
+
+# API Documentation :pencil12:
+
+**Base Endpoint : `/api`**
+
+## Auth Endpoint
+
+| Method | Endpoint    | Params Required | Need Login | Description               |
+| ------ | ----------- | --------------- | ---------- | ------------------------- |
+| POST   | `/login`    | No params       | No         | Login existing user       |
+| POST   | `/register` | No params       | No         | Registration user         |
+| POST   | `/logout`   | No params       | Yes        | Logout authenticated user |
+
+## Auth Post
+
+**Endpoint : [base](#api-documentation-pencil12) + /post**
+
+| Method | Endpoint   | Params Required | Need Login | Description               |
+| ------ | ---------- | --------------- | ---------- | ------------------------- |
+| GET    | `/get-all` | No params       | No         | Login existing user       |
+| POST   | `/`        | No params       | No         | Registration user         |
+| POST   | `/`        | No params       | Yes        | Logout authenticated user |
