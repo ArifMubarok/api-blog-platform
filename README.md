@@ -80,7 +80,8 @@ cmd composer install
 > [!NOTE]
 > Before using auth endpoint especially for login, your SPA's "login" page should first make a request to the `/sanctum/csrf-cookie` endpoint to initialize CSRF protection for the application:.
 >
-> ```axios.get('/sanctum/csrf-cookie').then(response => {
+> ```
+> axios.get('/sanctum/csrf-cookie').then(response => {
 >    // Login...
 > });
 > ```
