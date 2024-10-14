@@ -74,4 +74,19 @@ class AuthController extends Controller
             );
         }
     }
+
+    public function profile(): JsonResponse
+    {
+        try {
+            $user = Auth::user();
+            return Helper::sendSuccessResponse(['profile' => $user], Response::HTTP_OK, 'Get Profile Success');
+        } catch (\Exception $e) {
+            $statusCode = Response::HTTP_INTERNAL_SERVER_ERROR;
+            return Helper::sendErrorResponse(
+                ['file' => $e->getFile(), 'line' => $e->getLine()],
+                $statusCode,
+                $e->getMessage()
+            );
+        }
+    }
 }

@@ -11,8 +11,8 @@ Route::group(['middleware' => 'forceJsonResponse'], function () {
     Route::post('/login', [AuthController::class, 'login'])->name('login');
 
     Route::group(['middleware' => 'auth:sanctum'], function () {
+        Route::get('/profile', [AuthController::class, 'profile'])->name('profile');
         Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-        // Route::get('/user', function (Request $request) {return $request->user()});
         Route::group(['prefix' => 'post'], function () {
             Route::get('/', [PostController::class, 'getAll'])->name('getAll');
             Route::get('/get-all', [PostController::class, 'getAll'])->name('getAllPublic')->withoutMiddleware('auth:sanctum');
