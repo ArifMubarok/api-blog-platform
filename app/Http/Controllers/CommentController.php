@@ -61,11 +61,11 @@ class CommentController extends Controller
     {
         try {
             $post = PostController::getById($postId);
-            $comments = Comment::with(['post', 'user'])->where(['post_id' => $post->id])->paginate(20);
-            if ($comments->total() == 0) {
+            $comments = Comment::with(['user'])->where(['post_id' => $post->id])->get();
+            if ($comments->count() == 0) {
                 throw new NotFoundHttpException("Comment on this post not found");
             }
-            return Helper::sendSuccessResponse($comments, Response::HTTP_OK, 'Get all comment on this post successful');
+            return Helper::sendSuccessResponse(['total' => $comments->count(), 'comment' => $comments], Response::HTTP_OK, 'Get all comment on this post successful');
         } catch (\Exception $e) {
             $statusCode = Response::HTTP_INTERNAL_SERVER_ERROR;
             if ($e instanceof NotFoundHttpException) {
