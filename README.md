@@ -4,6 +4,28 @@ Need install php versi 8.2 +, install laravel installer, install composer
 mengaktifkan extension pdo_pgsql
 cmd composer install
 
+# Prerequisit
+
+Please make sure you :
+
+> already install postgresql
+> install [PHP](https://www.php.net/downloads.php) (version 8.2)
+> activate extension for postgresql in `php.ini` by removing the ';' in 'extension=pdo_mysql'
+
+# Getting Started
+
+After clone this repo, you need to run ;
+
+```bash
+# install dependencies
+composer install
+# migrate the database
+php artisan migrate
+# run server
+php artisan serve
+
+```
+
 # API Documentation 📝
 
 **Base Endpoint : `/api`**
