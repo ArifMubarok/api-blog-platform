@@ -1,9 +1,3 @@
-install postgresql
-ubah env menggunakan postgresql
-Need install php versi 8.2 +, install laravel installer, install composer
-mengaktifkan extension pdo_pgsql
-cmd composer install
-
 # Prerequisit
 
 Please make sure you :
