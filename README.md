@@ -8,9 +8,9 @@ cmd composer install
 
 Please make sure you :
 
-> already install postgresql
-> install [PHP](https://www.php.net/downloads.php) (version 8.2)
-> activate extension for postgresql in `php.ini` by removing the ';' in 'extension=pdo_mysql'
+-   already install postgresql
+-   install [PHP](https://www.php.net/downloads.php) (version 8.2)
+-   activate extension for postgresql in `php.ini` by removing the ';' in 'extension=pdo_mysql'
 
 # Getting Started
 
