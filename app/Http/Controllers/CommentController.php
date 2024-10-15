@@ -61,7 +61,7 @@ class CommentController extends Controller
     {
         try {
             $post = PostController::getById($postId);
-            $comments = Comment::with(['user'])->where(['post_id' => $post->id])->get();
+            $comments = Comment::with(['user'])->where(['post_id' => $post->id])->orderBy('created_at', 'desc')->get();
             if ($comments->count() == 0) {
                 throw new NotFoundHttpException("Comment on this post not found");
             }
